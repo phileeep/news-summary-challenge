@@ -1,5 +1,4 @@
 "use strict";
-
 class Article {
   constructor(id, title, text, thumbnail){
     this.id = id

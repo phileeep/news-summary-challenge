@@ -2,18 +2,86 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
+  background-color: rgb(131, 173, 245);
 }
 
-#titleTop {
-  margin: 2em 0;
-  color: navy;
+/*-------------- Containers -----------------*/
+
+#articlesContainer{
+  max-width: 800px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 4em;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  letter-spacing: .03em;
 }
 
-button {
+#articlesContainer img {
+  padding: 2em 0;
+  margin: 0 auto;
+  width: 80%;
+  height: auto;
   display: block;
-  margin: 1em auto;
 }
 
 .articleText{
   font-size: 1.2em;
+}
+
+/*-------------- Titles -----------------*/
+
+#titleTop {
+  margin: 1.5em auto;
+  font-size: 3em;
+  color: navy;
+  background-color: rgb(238, 235, 235);
+  padding: 1em 1.5em;
+  border-radius: 10px;
+  width: 400px;
+  font-weight: 700;
+  font-family: 'Newsreader', serif;
+  letter-spacing: .05em
+}
+
+#titleTop, a {
+  /* text-decoration: none; */
+  cursor: pointer;
+}
+
+h1 {
+  margin: 0 auto;
+  padding: 1em 0 0;
+  font-weight: 500;
+  color: grey;
+}
+
+h1, a {
+  color: navy;
+}
+
+/*-------------- Buttons -----------------*/
+
+#mainButton {
+  margin: 0em auto 1.5em;
+  background-color: navy;
+  padding: 1em 1.5em;
+  color: white;
+  border-radius: 10px;
+  border: 0 black solid;
+  display: inline-block;
+}
+
+#mainButton:hover{
+  background-color: rgb(82, 82, 99);
+  cursor: pointer;
+}
+
+
+#closeButton{
+  display: block;
+  margin: 0 auto;
+  width: 40px;
+  border: 2px solid black;
 }

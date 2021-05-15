@@ -12,17 +12,17 @@ async function catchGuardian(){
       const newDiv = document.createElement('div')
       const headingElement = document.createElement("h1")
       const photoElement = document.createElement('img')
-      const buttonElement = document.createElement('button')
+      const buttonElement = document.createElement('a')
       newDiv.appendChild(headingElement)
       newDiv.appendChild(photoElement)
       newDiv.appendChild(buttonElement)
       headingElement.innerHTML = `<a href='#${indexId}'>${result.webTitle}</a>`
       photoElement.src = `${result.fields.thumbnail}`
       buttonElement.innerText = "Read Article"
-      buttonElement.setAttribute('href', `${result[indexId]}`)
+      buttonElement.href = `#${indexId}`
+      buttonElement.id = "mainButton"
       createArticle(`${indexId}`, `${result.webTitle}`, `${result.fields.body}`, `${result.fields.thumbnail}`)
       articleDiv.appendChild(newDiv)
-
     })
 };
 
@@ -48,16 +48,15 @@ function getArticleFromUrl(location){
 };
 
 function showArticle(id){
-  const closeButton = document.createElement("a");
-  const articlePhoto = document.createElement('img')
+  const closeButton = document.createElement("button");
+  const headingElement = document.createElement("h1")
   closeButton.innerText = "Go Back to Home"
-  closeButton.href = "";
-  articlePhoto.src = `${articleArrs[id].thumbnail}`
-  // articleDiv.innerHTML = articleArrs[id].title
-  articleDiv.innerHTML = `<p class="articleText">${articleArrs[id].text}</p>`
-  articleDiv.appendChild(articlePhoto)
+  closeButton.id = "mainButton"
+
+  closeButton.addEventListener('click', () =>{
+    window.location = "mainButton";
+  })
+
+  articleDiv.innerHTML = `${articleArrs[id].title}<br>${articleArrs[id].text}`
   articleDiv.appendChild(closeButton)
 }
-
-console.log(articleArrs)
-
