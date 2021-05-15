@@ -54,7 +54,7 @@ function showArticle(id){
   closeButton.id = "mainButton"
 
   closeButton.addEventListener('click', () =>{
-    window.location = "mainButton";
+    window.location = "";
   })
 
   articleDiv.innerHTML = `${articleArrs[id].title}<br>${articleArrs[id].text}`
